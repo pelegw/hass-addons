@@ -6,7 +6,6 @@ FROM ${BUILD_FROM}
 COPY rootfs /
 
 # Setup base
-RUN apk update
 RUN apk add --no-cache \
     python3 \
     py3-boto3 \
