@@ -1,4 +1,4 @@
-ARG BUILD_FROM=alpine:latest
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:14.1.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -10,19 +10,13 @@ ARG BUILD_DATE
 ARG BUILD_REF
 ARG BUILD_VERSION
 
-# Setup base
-RUN \
-    echo "@main https://dl-cdn.alpinelinux.org/alpine/latest-stable/main" >> /etc/apk/repositories && \
-    echo "@community https://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories
-    
+   
 #RUN apk update --allow-untrusted
 RUN apk add --no-cache \
     python3 \
-    #py3-boto3@community \
+    py3-boto3 \
     py3-watchdog \
     py3-requests
-RUN apk add py3-boto3 --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/latest-stable/community/ 
-
 
 # Labels
 LABEL \
