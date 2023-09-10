@@ -7,8 +7,8 @@ COPY rootfs /
 
 # Setup base
 RUN \
-    echo "@main http://dl-cdn.alpinelinux.org/alpine/v${ALPINE_MIN_VERSION}/main" >> /etc/apk/repositories && \
-    echo "@community http://dl-cdn.alpinelinux.org/alpine/v${ALPINE_MIN_VERSION}/community" >> /etc/apk/repositories
+    echo "@main https://dl-cdn.alpinelinux.org/alpine/v${ALPINE_MIN_VERSION}/main" >> /etc/apk/repositories && \
+    echo "@community https://dl-cdn.alpinelinux.org/alpine/v${ALPINE_MIN_VERSION}/community" >> /etc/apk/repositories
     
 RUN apk update
 RUN apk add --no-cache \
