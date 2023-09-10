@@ -21,7 +21,7 @@ RUN apk add --no-cache \
     #py3-boto3@community \
     py3-watchdog \
     py3-requests
-RUN apk add py3-boto3 --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted
+RUN apk add py3-boto3 --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ 
 
 
 # Labels
