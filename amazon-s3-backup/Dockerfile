@@ -4,11 +4,16 @@ FROM ${BUILD_FROM}
 
 # Copy root filesystem
 COPY rootfs /
+# Build arguments
+ARG BUILD_ARCH
+ARG BUILD_DATE
+ARG BUILD_REF
+ARG BUILD_VERSION
 
 # Setup base
 RUN \
-    echo "@main https://dl-cdn.alpinelinux.org/alpine/v${ALPINE_MIN_VERSION}/main" >> /etc/apk/repositories && \
-    echo "@community https://dl-cdn.alpinelinux.org/alpine/v${ALPINE_MIN_VERSION}/community" >> /etc/apk/repositories
+    echo "@main https://dl-cdn.alpinelinux.org/alpine/latest-stable/main" >> /etc/apk/repositories && \
+    echo "@community https://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories
     
 RUN apk update
 RUN apk add --no-cache \
@@ -17,11 +22,7 @@ RUN apk add --no-cache \
     py3-watchdog \
     py3-requests
 
-# Build arguments
-ARG BUILD_ARCH
-ARG BUILD_DATE
-ARG BUILD_REF
-ARG BUILD_VERSION
+
 
 # Labels
 LABEL \
