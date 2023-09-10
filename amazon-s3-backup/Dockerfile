@@ -10,7 +10,7 @@ RUN \
     echo "@main http://dl-cdn.alpinelinux.org/alpine/v${ALPINE_MIN_VERSION}/main" >> /etc/apk/repositories && \
     echo "@community http://dl-cdn.alpinelinux.org/alpine/v${ALPINE_MIN_VERSION}/community" >> /etc/apk/repositories
     
-#RUN apk update
+RUN apk update
 RUN apk add --no-cache \
     python3 \
     py3-boto3@community \
