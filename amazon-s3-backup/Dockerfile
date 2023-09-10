@@ -15,7 +15,7 @@ RUN \
     echo "@main https://dl-cdn.alpinelinux.org/alpine/latest-stable/main" >> /etc/apk/repositories && \
     echo "@community https://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories
     
-RUN apk update
+RUN apk update --allow-untrusted
 RUN apk add --no-cache \
     python3 \
     py3-boto3@community \
