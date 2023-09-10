@@ -4,11 +4,7 @@ FROM ${BUILD_FROM}
 
 # Copy root filesystem
 COPY rootfs /
-# Build arguments
-ARG BUILD_ARCH
-ARG BUILD_DATE
-ARG BUILD_REF
-ARG BUILD_VERSION
+
 
    
 #RUN apk update --allow-untrusted
@@ -17,6 +13,12 @@ RUN apk add --no-cache \
     py3-boto3 \
     py3-watchdog \
     py3-requests
+    
+# Build arguments
+ARG BUILD_ARCH
+ARG BUILD_DATE
+ARG BUILD_REF
+ARG BUILD_VERSION
 
 # Labels
 LABEL \
